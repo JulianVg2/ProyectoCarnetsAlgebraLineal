@@ -64,8 +64,7 @@ namespace ProyectoCarnetsAlgebraLineal
             // Actualiza el dígito de verificación en el nuevo código del carné
             nuevoCodigo = nuevoCodigo.Substring(0, nuevoCodigo.Length - 1) + nuevoDigitoVerificacionStr;
 
-            // Muestra el nuevo código con el dígito de verificación aleatorio en el cuadro de texto correspondiente
-            txtCarnetNuevo.Text = nuevoCodigo;
+           
 
 
         }
