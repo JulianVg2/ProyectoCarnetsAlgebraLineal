@@ -67,6 +67,22 @@ namespace ProyectoCarnetsAlgebraLineal
             // Muestra el nuevo código con el dígito de verificación aleatorio en el cuadro de texto correspondiente
             txtCarnetNuevo.Text = nuevoCodigo;
 
+            MessageBox.Show("Numero de verificacion randomizado");
+            
+            string carnet = nuevoCodigo;
+
+            var qrWriter = new ZXing.BarcodeWriter
+            {
+                Format = ZXing.BarcodeFormat.QR_CODE,
+                Options = new ZXing.QrCode.QrCodeEncodingOptions
+                {
+                    Height = 300,
+                    Width = 300
+                }
+            };
+
+            var bitmap = qrWriter.Write(carnet);
+            pictureBox1.Image = bitmap;
 
         }
         private void btnGenerarQr_Click(object sender, EventArgs e)
